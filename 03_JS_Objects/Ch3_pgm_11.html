@@ -1,0 +1,69 @@
+<!-- // Using a property in a calculation
+
+var player1;
+
+player1 = {
+	  name: "Max",
+	  score: 0
+};
+
+console.log(player1.name + " has scored " + player1.score);
+
+player1.score = player1.score + 50;
+
+console.log(player1.name + " has scored " + player1.score);
+
+/* Further Adventures
+ *
+ * 1) Write code to increase player1's score by 10%.
+ *
+ * 2) Add a second player.
+ *
+ * 3) Use the players' properties to find the sum
+ *    of their scores and log it to the console,
+ *    along with an appropriate message that includes
+ *    their names.
+ *
+ */ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ch11</title>
+ </head>
+ <body>
+    <script>
+        var player1 = {
+    name: "Max",
+    score: 0
+};
+
+console.log(player1.name + " has scored " + player1.score);
+
+player1.score = player1.score + 50;
+
+console.log(player1.name + " has scored " + player1.score);
+
+// Increase player1's score by 10%
+player1.score = player1.score * 1.10;
+
+console.log(player1.name + " has scored " + player1.score);
+
+// Add second player
+var player2 = {
+    name: "Alex",
+    score: 80
+};
+
+console.log(player2.name + " has scored " + player2.score);
+
+// Find  sum of scores
+var totalScore = player1.score + player2.score;
+
+console.log(player1.name + " and " + player2.name + " have a combined score of " + totalScore);
+
+    </script>
+ </body>
+ </html>
