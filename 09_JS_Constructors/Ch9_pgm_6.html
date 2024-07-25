@@ -1,0 +1,129 @@
+<!-- var Planet = function (name, position, type) {
+    this.name = name;
+    this.position = position;
+    this.type = type;
+    this.moons = [];
+  
+    this.showPlanet = function () {
+        console.log(this.name);
+        console.log("Planet " + this.position + " - " + this.type);
+        console.log("Moons: " + this.moons.join(', ') + ".");
+    };
+  
+    this.addMoon = function (moon) {
+        this.moons.unshift(moon);
+    };
+};
+
+var planet1 = new Planet("Jupiter", 5, "Gas Giant");
+planet1.addMoon("Io");
+planet1.addMoon("Europa");
+
+var planet2 = new Planet("Neptune", 8, "Ice Giant");
+planet2.addMoon("Triton");
+
+var planet3 = new Planet("Mercury", 1, "Terrestrial");
+
+[ planet1, planet2, planet3 ].forEach(function (planet) {
+    planet.showPlanet();
+});
+
+
+
+/* Further Adventures
+ *
+ * 1) Add a new moon to each planet.
+ *
+ * 2) Create a showMoons method in the
+ *    Planet constructor. It should
+ *    show the moons with their index.
+ *
+ *    (0) Io
+ *    (1) Europa
+ *
+ * 3) Update showPlanet to use showMoons
+ *    rather than join for the moons.
+ *
+ * 4) Create a getMoon method that
+ *    returns the moon at a given
+ *    index.
+ *
+ *    > planet1.getMoon(1)
+ *      Europa
+ *
+ */ -->
+<html lang="en">
+    <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Ch9</title>
+    </head>
+    <body>
+       <script>
+// Constructor function for Planet
+var Planet = function (name, position, type) {
+    this.name = name;
+    this.position = position;
+    this.type = type;
+    this.moons = [];
+  
+    // Method to display planet information and moons
+    this.showPlanet = function () {
+        console.log(this.name);
+        console.log("Planet " + this.position + " - " + this.type);
+        this.showMoons(); // Using showMoons method to display moons
+    };
+  
+    // Method to add a moon at the beginning of the array
+    this.addMoon = function (moon) {
+        this.moons.unshift(moon);
+    };
+  
+    // Method to show moons with their index
+    this.showMoons = function () {
+        if (this.moons.length > 0) {
+            this.moons.forEach(function (moon, index) {
+                console.log("(" + index + ") " + moon);
+            });
+        } else {
+            console.log("No moons.");
+        }
+    };
+
+    // Method to get a moon by index
+    this.getMoon = function (index) {
+        if (index >= 0 && index < this.moons.length) {
+            return this.moons[index];
+        } else {
+            return "Index out of range";
+        }
+    };
+};
+
+// Create planets and add moons
+var planet1 = new Planet("Jupiter", 5, "Gas Giant");
+planet1.addMoon("Io");
+planet1.addMoon("Europa");
+planet1.addMoon("Ganymede");
+
+var planet2 = new Planet("Neptune", 8, "Ice Giant");
+planet2.addMoon("Triton");
+planet2.addMoon("Nereid");
+
+var planet3 = new Planet("Mercury", 1, "Terrestrial");
+planet3.addMoon("None"); 
+
+// Display planets and moons
+[planet1, planet2, planet3].forEach(function (planet) {
+    planet.showPlanet();
+});
+
+// Example usage of getMoon
+console.log("Planet1, moon at index 1: " + planet1.getMoon(1)); 
+console.log("Planet2, moon at index 0: " + planet2.getMoon(0));
+console.log("Planet3, moon at index 0: " + planet3.getMoon(0)); 
+console.log("Planet3, moon at index 1: " + planet3.getMoon(1)); 
+
+</script>
+</body>
+</html>  
