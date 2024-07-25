@@ -1,0 +1,50 @@
+<!-- // Calling the same function with different arguments
+
+var showMessage;
+
+showMessage = function (message) {
+	console.log("The message is: " + message);
+};
+
+showMessage("It's full of stars!");
+showMessage("Hello to Jason Isaacs");
+showMessage("Hello to Jason Isaacs and Stephen Fry");
+
+/* Further Adventures
+ *
+ * 1) Change the showMessage function to
+ *    display its prefixed text on a
+ *    separate line to the message.
+ *
+ * 2) Declare a myMessage variable and
+ *    assign it a string value.
+ *
+ * 3) Call the showMessage function with
+ *    myMessage as the argument.
+ *
+ */ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ch5</title>
+ </head>
+ <body>
+    <script>
+var showMessage = function (message) {
+    console.log("The message is:\n" + message); // Updated function
+};
+
+showMessage("It's full of stars!");
+showMessage("Hello to Jason Isaacs");
+showMessage("Hello to Jason Isaacs and Stephen Fry");
+
+var myMessage = "Greetings from the JavaScript world!"; // New variable
+
+showMessage(myMessage); // Call with myMessage
+
+</script>
+</body>
+</html> 
