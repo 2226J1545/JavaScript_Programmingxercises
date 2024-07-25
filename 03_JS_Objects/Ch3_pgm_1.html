@@ -1,0 +1,75 @@
+<!-- // Using variables to represent a book
+
+var bookTitle;
+var bookAuthor;
+
+bookTitle = "The Hobbit";
+bookAuthor = "J. R. R. Tolkien";
+
+console.log(bookTitle + " by " + bookAuthor);
+
+/* Further Adventures
+ *
+ * 1) Declare variables for a second book
+ *    and assign them values.
+ *
+ * 2) Add code to log its details to the console.
+ *
+ * 3) Repeat steps 1 and 2 for a third book.
+ *
+ * 4) Consider the code needed for 10 books.
+ *    For 100 books.
+ *
+ */ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ch2</title>
+ </head>
+ <body>
+    <script>
+ // Variables for the first book
+var bookTitle1;
+var bookAuthor1;
+
+bookTitle1 = "The Hobbit";
+bookAuthor1 = "J. R. R. Tolkien";
+
+console.log(bookTitle1 + " by " + bookAuthor1);
+
+// Variables for the second book
+var bookTitle2;
+var bookAuthor2;
+
+bookTitle2 = "1984";
+bookAuthor2 = "George Orwell";
+
+console.log(bookTitle2 + " by " + bookAuthor2);
+
+// Variables for the third book
+var bookTitle3;
+var bookAuthor3;
+
+bookTitle3 = "To Kill a Mockingbird";
+bookAuthor3 = "Harper Lee";
+
+console.log(bookTitle3 + " by " + bookAuthor3);
+
+// Consideration for more books
+// For 10 or 100 books, using arrays or objects would be more efficient
+
+var books = [
+  {title: "The Hobbit", author: "J. R. R. Tolkien"},
+  {title: "1984", author: "George Orwell"},
+  {title: "To Kill a Mockingbird", author: "Harper Lee"},
+  // Add more books as needed
+];
+
+for (var i = 0; i < books.length; i++) {
+  console.log(books[i].title + " by " + books[i].author);
+}
+</script>
+</body>
+</html>
