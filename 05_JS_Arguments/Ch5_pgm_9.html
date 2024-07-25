@@ -1,0 +1,60 @@
+<!-- // Displaying a player's health
+
+var showPlayerHealth;
+
+showPlayerHealth = function (playerName, playerHealth) {
+    console.log(playerName + " has health " + playerHealth);
+};
+
+showPlayerHealth("Kandra", 50);
+showPlayerHealth("Dax", 40);
+
+/* Further Adventures
+ *
+ * 1) Change the showPlayerHealth function
+ *    so it shows information of the form:
+ *    Kandra: health 50.
+ *
+ * 2) Call the showPlayerHealth function
+ *    using your own arguments.
+ *
+ * 3) Declare a variable called healthInfo
+ *    inside the showPlayerHealth function.
+ *
+ *    var healthInfo;
+ *
+ * 4) Assign healthInfo the string that
+ *    will be displayed.
+ *
+ *    healthInfo = playerName + ": health " + playerHealth;
+ *
+ * 5) Change the call to console.log so that
+ *    it uses the healthInfo variable.
+ *
+ */ -->
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Ch5</title>
+</head>
+<body>
+   <script>
+var showPlayerHealth = function (playerName, playerHealth) {
+    var healthInfo; // Step 3
+    healthInfo = playerName + ": health " + playerHealth; // Step 4
+    console.log(healthInfo); // Step 5
+};
+
+showPlayerHealth("Kandra", 50);
+showPlayerHealth("Dax", 40);
+
+// Additional tests with your own arguments
+showPlayerHealth("Artemis", 75);
+showPlayerHealth("Lyra", 60);
+
+</script>
+</body>
+</html> 
