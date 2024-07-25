@@ -1,0 +1,53 @@
+<!-- // Finding a character with indexOf
+
+var message = "We choose to go to the Moon!";
+
+var charIndex = message.indexOf("M");
+
+console.log(message.substr(charIndex, 3));
+
+
+
+/* Further Adventures
+ *
+ * 1) Use indexOf to find the index of where the
+ *    word 'go' starts in the message string.
+ *
+ * 2) Use indexOf and substr to display the word
+ *    'choose' from the message string.
+ *
+ * There is also a lastIndexOf string method.
+ *
+ * 3) Use lastIndexOf to find the index of the
+ *    'oo' in the word 'Moon' of the message string.
+ *
+ */ -->
+<html lang="en">
+    <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Ch7</title>
+    </head>
+    <body>
+       <script>
+        // Original message
+var message = "We choose to go to the Moon!";
+
+// Find the index of the first occurrence of 'M'
+var charIndex = message.indexOf("M");
+console.log(message.substr(charIndex, 3)); 
+
+// 1) Find the index of the word 'go'
+var goIndex = message.indexOf("go");
+console.log(goIndex);
+
+// Use indexOf and substr to display the word 'choose'
+var chooseIndex = message.indexOf("choose");
+console.log(message.substr(chooseIndex, 7)); 
+
+// 2) Use lastIndexOf to find the index of 'oo' in 'Moon'
+var lastOoIndex = message.lastIndexOf("oo");
+console.log(lastOoIndex); 
+</script>
+</body>
+</html>  
