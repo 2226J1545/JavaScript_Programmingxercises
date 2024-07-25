@@ -1,0 +1,61 @@
+<!-- // Using a variable as a property value
+
+var book;
+var bookName;
+
+bookName = "The Adventures of Tom Sawyer";
+
+book = {
+    title : bookName
+};
+
+/* Further Adventures
+ *
+ * 1) Run the program.
+ *
+ * 2) At the console prompt, type 'book'
+ *    and press enter.
+ *
+ * The book object should be displayed on the console.
+ * Its title property should have the same
+ * value as the bookName variable.
+ *
+ * 3) Change the value of the bookName variable
+ *    and try steps 1 and 2 again.
+ *
+ */ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ch6</title>
+  
+ </head>
+ <body>
+    <script>
+       // Using a variable as a property value
+
+var book;
+var bookName;
+
+bookName = "The Adventures of Tom Sawyer";
+
+book = {
+    title: bookName
+};
+
+// Log the book object to the console
+console.log(book);
+// Change the value of bookName
+bookName = "Moby Dick";
+
+book = {
+    title: bookName
+};
+// Log the updated book object to the console
+console.log(book);
+    </script>
+ </body>
+ </html>
