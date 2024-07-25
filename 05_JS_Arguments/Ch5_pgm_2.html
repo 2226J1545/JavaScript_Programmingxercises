@@ -1,0 +1,51 @@
+<!-- // Breaking a function by changing a variable name
+
+var msg;
+var showMessage;
+
+msg = "It's full of stars!";
+
+showMessage = function () {
+	console.log(message);
+};
+
+showMessage();
+
+/* Further Adventures
+ *
+ * 1) Update the console.log so the program works.
+ *
+ * 2) Declare another message variable
+ *    and assign it a value.
+ *
+ * 3) Display the new message as well as the old one.
+ *
+ * 4) Display a single message created by joining
+ *    the two strings.
+ *
+ */ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ch4</title>
+ </head>
+ <body>
+    <script>
+var msg = "It's full of stars!";
+var msg2 = "And the universe is vast!";
+
+var combinedMessage = msg + " " + msg2;
+
+var showMessage = function () {
+    console.log(msg);         // Old message
+    console.log(msg2);        // New message
+    console.log(combinedMessage); // Combined message
+};
+
+showMessage(); // Logs all messages
+
+</script>
+</body>
+</html> 
