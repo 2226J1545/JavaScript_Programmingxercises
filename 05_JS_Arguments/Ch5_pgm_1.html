@@ -1,0 +1,59 @@
+<!-- // Relying on a variable outside of the function
+
+var message;
+var showMessage;
+
+message = "It's full of stars!";
+
+showMessage = function () {
+	console.log(message);
+};
+
+showMessage();
+
+/* Further Adventures
+ *
+ * 1) Change the message and run the program.
+ *
+ * 2) Change the variable name in the
+ *    parentheses for console.log.
+ *    e.g. console.log(msg);
+ *
+ * 3) Run the program
+ *
+ * The showMessage function relies on
+ * the variable name it uses with
+ * console.log matching one that exists
+ * outside of the function body.
+ *
+ */ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ch4</title>
+ </head>
+ <body>
+    <script>
+// Example 1: Changing the message
+var message = "Hello, Universe!";
+
+var showMessage = function () {
+    console.log(message);
+};
+
+showMessage(); // Logs: "Hello, Universe!"
+
+// Example 2: Changing the variable name in `console.log`
+var msg = "It's full of stars!";
+
+var showMessage = function () {
+    console.log(msg); // Uses 'msg' which is defined in the outer scope
+};
+
+showMessage(); // Logs: "It's full of stars!"
+
+</script>
+</body>
+</html> 
