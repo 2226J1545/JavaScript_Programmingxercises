@@ -1,0 +1,68 @@
+<!-- // Using a function to create an object
+
+var buildPlanet = function (name, position, type) {
+    var planet = {};
+  
+    planet.name = name;
+    planet.position = position;
+    planet.type = type;
+  
+    return planet;
+};
+
+var planet1 = buildPlanet(
+    "Jupiter",
+    5,
+    "Gas Giant"
+);
+
+console.log(planet1.name);
+console.log(planet1.position);
+console.log(planet1.type);
+
+
+
+/* Further Adventures
+ *
+ * 1) Build a second planet,
+ *    using the buildPlanet function.
+ *
+ * 2) Log its name and type.
+ *
+ */ -->
+ <html lang="en">
+    <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Ch9</title>
+    </head>
+    <body>
+       <script>
+// Function to create a planet object
+var buildPlanet = function (name, position, type) {
+    var planet = {};
+  
+    planet.name = name;
+    planet.position = position;
+    planet.type = type;
+  
+    return planet;
+};
+
+// Create the first planet
+var planet1 = buildPlanet("Jupiter", 5, "Gas Giant");
+
+console.log(planet1.name);    
+console.log(planet1.position);  
+console.log(planet1.type);      
+
+// 1) Build a second planet
+var planet2 = buildPlanet("Neptune", 8, "Ice Giant");
+
+// 2) Log its name and type
+console.log(planet2.name);  
+console.log(planet2.type);  
+
+</script>
+</body>
+</html>  
