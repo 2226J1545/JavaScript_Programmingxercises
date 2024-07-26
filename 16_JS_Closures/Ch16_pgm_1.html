@@ -1,0 +1,104 @@
+<!-- // Level 1
+
+// Create a closure which has one inner function
+
+// Level 2
+
+// Create a closure which has three inner functions
+
+// Level 3
+
+// Create a personAccount out function. It has firstname, lastname, incomes, expenses inner 
+// variables. It has totalIncome, totalExpense, accountInfo,addIncome, addExpense and 
+// accountBalance inner functions. Incomes is a set of incomes and its description and 
+// expenses is also a set of expenses and its description. -->
+<html lang="en">
+    <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Ch10</title>
+    </head>
+    <body>
+       <script> 
+        // Level 1
+
+// Create a closure which has one inner function
+function createGreeting(greeting) {
+  return function(name) {
+    return `${greeting}, ${name}!`;
+  };
+}
+
+const greetHello = createGreeting('Hello');
+console.log(greetHello('Alice')); 
+console.log(greetHello('Bob'));  
+
+// Level 2
+
+// Create a closure which has three inner functions
+function createCalculator() {
+  let total = 0;
+
+  return {
+    add: function(value) {
+      total += value;
+      return total;
+    },
+    subtract: function(value) {
+      total -= value;
+      return total;
+    },
+    getTotal: function() {
+      return total;
+    }
+  };
+}
+
+const calculator = createCalculator();
+console.log(calculator.add(10));      
+console.log(calculator.subtract(5));  
+console.log(calculator.getTotal());    
+
+// Level 3
+
+// Create a personAccount function with specified properties and methods
+function personAccount(firstname, lastname) {
+  let incomes = [];
+  let expenses = [];
+
+  return {
+    totalIncome: function() {
+      return incomes.reduce((acc, income) => acc + income.amount, 0);
+    },
+    totalExpense: function() {
+      return expenses.reduce((acc, expense) => acc + expense.amount, 0);
+    },
+    accountInfo: function() {
+      return `Account holder: ${firstname} ${lastname}`;
+    },
+    addIncome: function(description, amount) {
+      incomes.push({ description, amount });
+    },
+    addExpense: function(description, amount) {
+      expenses.push({ description, amount });
+    },
+    accountBalance: function() {
+      return this.totalIncome() - this.totalExpense();
+    }
+  };
+}
+
+const myAccount = personAccount('John', 'Doe');
+myAccount.addIncome('Salary', 1000);
+myAccount.addIncome('Freelance', 500);
+myAccount.addExpense('Rent', 300);
+myAccount.addExpense('Utilities', 100);
+
+console.log(myAccount.accountInfo());         
+console.log('Total Income:', myAccount.totalIncome());  
+console.log('Total Expense:', myAccount.totalExpense());
+console.log('Account Balance:', myAccount.accountBalance());
+
+</script>
+</body>
+</html>  
