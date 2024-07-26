@@ -1,0 +1,60 @@
+<!-- // Using a variable as an index
+
+var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+var dayInWeek = 4;
+
+console.log( days[dayInWeek] );
+console.log( days[dayInWeek - 1] );
+
+
+
+/* Further Adventures
+ *
+ * 1) Change the value of the dayInWeek variable
+ *    to display a different day.
+ *
+ * 2) Write a function that accepts a number for the
+ *    day of the week to be displayed and returns
+ *    the day as a string. Assign the function to
+ *    a getDay variable.
+ *
+ * 3) Call your function, passing it 4 as the day
+ *    of the week, and log the value it returns.
+ *
+ */ -->
+<html lang="en">
+    <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Ch8</title>
+    </head>
+    <body>
+       <script>
+// Using a variable as an index
+
+var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+var dayInWeek = 4;
+
+// Change the value of dayInWeek to display a different day
+dayInWeek = 2; 
+
+// Display the day based on the updated dayInWeek
+console.log(days[dayInWeek]);
+console.log(days[dayInWeek - 1]);
+
+// Define a function to get the day of the week based on a number
+var getDay = function(dayNumber) {
+    // Ensure the dayNumber is within the range of the days array
+    if (dayNumber >= 0 && dayNumber < days.length) {
+        return days[dayNumber];
+    } else {
+        return "Invalid day number";
+    }
+};
+
+// Call the function with 4 and log the value it returns
+console.log(getDay(4)); 
+
+</script>
+</body>
+</html>    
