@@ -1,0 +1,109 @@
+<!-- // Level 1
+
+// Store you first name, last name, age, country, city in your browser localStorage.
+
+
+// Level 2
+
+// Create a student object. The student object will have first name, last name, age, skills, 
+// country, enrolled keys and values for the keys. Store the student object in your browser 
+// localStorage.
+
+
+// Level 3
+
+// Create an object called personAccount. It has firstname, lastname, incomes, expenses 
+// properties and it has totalIncome, totalExpense, accountInfo,addIncome, addExpense and 
+// accountBalance methods. Incomes is a set of incomes and its description and expenses is 
+// also a set of expenses and its description. -->
+<html lang="en">
+    <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Ch10</title>
+    </head>
+    <body>
+       <script> 
+// Store personal information in localStorage
+localStorage.setItem('firstName', 'John');
+localStorage.setItem('lastName', 'Doe');
+localStorage.setItem('age', '30');
+localStorage.setItem('country', 'USA');
+localStorage.setItem('city', 'New York');
+
+// Retrieve and log the stored information
+console.log('First Name:', localStorage.getItem('firstName'));
+console.log('Last Name:', localStorage.getItem('lastName'));
+console.log('Age:', localStorage.getItem('age'));
+console.log('Country:', localStorage.getItem('country'));
+console.log('City:', localStorage.getItem('city'));
+
+// Create a student object
+const student = {
+  firstName: 'Jane',
+  lastName: 'Smith',
+  age: 22,
+  skills: ['JavaScript', 'Python', 'Django'],
+  country: 'USA',
+  enrolled: true
+};
+
+// Store the student object in localStorage
+localStorage.setItem('student', JSON.stringify(student));
+
+// Retrieve and log the student object
+const storedStudent = JSON.parse(localStorage.getItem('student'));
+console.log('Student:', storedStudent);
+
+// Create the personAccount object
+const personAccount = {
+  firstName: 'Emily',
+  lastName: 'Johnson',
+  incomes: {},
+  expenses: {},
+  
+  // Method to add income
+  addIncome(description, amount) {
+    this.incomes[description] = (this.incomes[description] || 0) + amount;
+  },
+  
+  // Method to add expense
+  addExpense(description, amount) {
+    this.expenses[description] = (this.expenses[description] || 0) + amount;
+  },
+  
+  // Method to get total income
+  totalIncome() {
+    return Object.values(this.incomes).reduce((acc, curr) => acc + curr, 0);
+  },
+  
+  // Method to get total expense
+  totalExpense() {
+    return Object.values(this.expenses).reduce((acc, curr) => acc + curr, 0);
+  },
+  
+  // Method to get account information
+  accountInfo() {
+    return `Account Holder: ${this.firstName} ${this.lastName}\nTotal Income: $${this.totalIncome()}\nTotal Expense: $${this.totalExpense()}`;
+  },
+  
+  // Method to get account balance
+  accountBalance() {
+    return this.totalIncome() - this.totalExpense();
+  }
+};
+
+// Example usage
+personAccount.addIncome('Salary', 3000);
+personAccount.addIncome('Freelance', 1200);
+personAccount.addExpense('Rent', 800);
+personAccount.addExpense('Utilities', 150);
+
+console.log('Total Income:', personAccount.totalIncome()); // 4200
+console.log('Total Expense:', personAccount.totalExpense()); // 950
+console.log('Account Info:', personAccount.accountInfo());
+console.log('Account Balance:', personAccount.accountBalance()); // 3250
+
+</script>
+</body>
+</html>  
