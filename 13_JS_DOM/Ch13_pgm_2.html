@@ -1,0 +1,134 @@
+<!-- // DOM: Mini Project
+
+// Develop the following application, use the following HTML elements to get started with. You will get the same code on starter folder. Apply all the styles and functionality using JavaScript only.
+
+// 1. The year color is changing every 1 second
+// 2. The date and time background color is changing every on seconds
+// 3. Completed challenge has background green
+// 4. Ongoing challenge has background yellow
+// 5. Coming challenges have background red
+
+
+
+//  index.html 
+
+
+// <!DOCTYPE html>
+// <html lang="en">
+//   <head>
+//     <title>JavaScript for Everyone:DOM</title>
+//   </head>
+//   <body>
+//     <div class="wrapper">
+//         <h1>JavaScript Challenges in 2024</h1>
+//         <h2>30DaysOfJavaScript Challenge</h2>
+//         <ul>
+//             <li>30DaysOfPython Challenge Done</li>
+//             <li>30DaysOfJavaScript Challenge Ongoing</li>
+//             <li>30DaysOfReact Challenge Coming</li>
+//             <li>30DaysOfFullStack Challenge Coming</li>
+//             <li>30DaysOfDataAnalysis Challenge Coming</li>
+//             <li>30DaysOfReactNative Challenge Coming</li>
+//             <li>30DaysOfMachineLearning Challenge Coming</li>
+//         </ul>
+//     </div>
+//   </body>
+// </html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript for Everyone: DOM</title>
+    <style>
+        .wrapper {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .challenge {
+            padding: 10px;
+            margin: 10px;
+            font-size: 1.2em;
+            color: #fff;
+        }
+        .completed {
+            background-color: green;
+        }
+        .ongoing {
+            background-color: yellow;
+            color: black; /* Set text color to black for better readability */
+        }
+        .coming {
+            background-color: red;
+        }
+        #year {
+            font-size: 2em;
+            margin: 20px 0;
+        }
+        #datetime {
+            font-size: 1.5em;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>JavaScript Challenges in 2024</h1>
+        <h2>30DaysOfJavaScript Challenge</h2>
+        <div id="year"></div>
+        <div id="datetime"></div>
+        <ul>
+            <li class="challenge completed">30DaysOfPython Challenge Done</li>
+            <li class="challenge ongoing">30DaysOfJavaScript Challenge Ongoing</li>
+            <li class="challenge coming">30DaysOfReact Challenge Coming</li>
+            <li class="challenge coming">30DaysOfFullStack Challenge Coming</li>
+            <li class="challenge coming">30DaysOfDataAnalysis Challenge Coming</li>
+            <li class="challenge coming">30DaysOfReactNative Challenge Coming</li>
+            <li class="challenge coming">30DaysOfMachineLearning Challenge Coming</li>
+        </ul>
+    </div>
+
+    <script>
+        // Function to change the year color every second
+        function changeYearColor() {
+            const yearElement = document.getElementById('year');
+            let colors = ['red', 'blue', 'green', 'orange', 'purple', 'pink'];
+            let colorIndex = 0;
+
+            setInterval(() => {
+                yearElement.style.color = colors[colorIndex];
+                colorIndex = (colorIndex + 1) % colors.length;
+            }, 1000);
+        }
+
+        // Function to change the date and time background color every second
+        function changeDateTimeBackgroundColor() {
+            const datetimeElement = document.getElementById('datetime');
+            let colors = ['lightgray', 'lightblue', 'lightgreen', 'lightcoral', 'lightgoldenrodyellow'];
+            let colorIndex = 0;
+
+            setInterval(() => {
+                datetimeElement.style.backgroundColor = colors[colorIndex];
+                colorIndex = (colorIndex + 1) % colors.length;
+            }, 1000);
+        }
+
+        // Function to update the date and time
+        function updateDateTime() {
+            const datetimeElement = document.getElementById('datetime');
+            setInterval(() => {
+                const now = new Date();
+                datetimeElement.textContent = now.toLocaleString();
+            }, 1000);
+        }
+
+        // Initial setup
+        document.getElementById('year').textContent = '2024'; // Set the initial year
+        changeYearColor();
+        changeDateTimeBackgroundColor();
+        updateDateTime();
+    </script>
+</body>
+</html>
