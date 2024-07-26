@@ -1,0 +1,62 @@
+<!-- // Use the countries array to display all the countries. 
+
+
+//See the design
+
+// https://github.com/Asabeneh/30-Days-Of-JavaScript/raw/master/images/projects/dom_min_project_countries_aray_day_2.2.png -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countries List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        #countries-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            max-width: 1200px;
+            width: 100%;
+        }
+        .country {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            text-align: center;
+            width: 150px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+        .country:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div id="countries-container"></div>
+
+    <script>
+        const countries = ['Finland', 'Sweden', 'Denmark', 'Norway', 'Iceland', 'United States', 'Canada', 'Germany', 'France', 'Australia'];
+
+        const container = document.getElementById('countries-container');
+
+        countries.forEach(country => {
+            const countryDiv = document.createElement('div');
+            countryDiv.className = 'country';
+            countryDiv.textContent = country;
+            container.appendChild(countryDiv);
+        });
+    </script>
+</body>
+</html>
