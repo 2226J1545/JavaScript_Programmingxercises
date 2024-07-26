@@ -1,0 +1,94 @@
+<!-- // Iterating over an array with forEach
+
+var items;
+var showInfo;
+
+items = [
+  "The Pyramids",
+  "The Grand Canyon",
+  "Bondi Beach"
+];
+
+showInfo = function (itemToShow) {
+    console.log(itemToShow);
+};
+
+items.forEach(showInfo);
+
+
+
+/* Further Adventures
+ *
+ * 1) Add a few extra items to the array, some
+ *    using push and some using square brackets.
+ *    Run the program.
+ *
+ * Strings also have a length property
+ * which gives the number of characters in the string.
+ *
+ * 2) Update the showInfo function to also
+ *    display the number of letters in each item.
+ *
+ * 3) Write a new function that finds the total
+ *    number of letters of the elements in
+ *    the items array.
+ *
+ */ -->
+<html lang="en">
+    <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Ch8</title>
+    </head>
+    <body>
+       <script>
+// Initial array and function
+var items;
+var showInfo;
+
+items = [
+  "The Pyramids",
+  "The Grand Canyon",
+  "Bondi Beach"
+];
+
+showInfo = function (itemToShow) {
+    console.log(itemToShow);
+};
+
+items.forEach(showInfo);
+
+// Further Adventures
+
+// 1) Add a few extra items to the array
+items.push("The Eiffel Tower");
+items[5] = "Machu Picchu"; 
+
+// Display the updated list
+console.log("Updated items:");
+items.forEach(showInfo);
+
+// 2) Update the showInfo function to also display the number of letters
+showInfo = function (itemToShow) {
+    console.log(itemToShow + " (" + itemToShow.length + " letters)");
+};
+
+// Run the updated function
+console.log("Items with letter counts:");
+items.forEach(showInfo);
+
+// 3) Write a new function to find the total number of letters
+var totalLetters = function (array) {
+    var total = 0;
+    array.forEach(function (item) {
+        total += item.length;
+    });
+    return total;
+};
+
+// Display the total number of letters
+console.log("Total number of letters:", totalLetters(items));
+
+</script>
+</body>
+</html>    
