@@ -1,0 +1,118 @@
+<!-- // Passing an array to a function
+
+var getVisitorReport = function (visitorArray, dayInWeek) {
+	var days = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday"
+  ];
+	var index = dayInWeek - 1;
+	var visitorReport;
+
+	visitorReport = "There were ";
+  visitorReport += visitorArray[index];
+  visitorReport += " visitors ";
+	visitorReport += "on " + days[index];
+
+	return visitorReport;
+};
+
+var visitors = [ 354, 132, 210, 221, 481 ];
+
+var report = getVisitorReport(visitors, 2);
+
+console.log(report);
+
+
+
+/* Further Adventures
+ *
+ * 1) Run the report for Friday.
+ *
+ * 2) Update the function to include Saturday and Sunday.
+ *
+ * A month of visitor info could be represented as an
+ * array of arrays: [ week1, week2, week3, week4 ]
+ * where each week could be an array of visitor numbers.
+ *
+ * 3) Write a new function with three parameters,
+ *    the month array, the week wanted and the day wanted.
+ *    The new function should return the visitor report specified.
+ *    You can call getVisitorReport from your function if you want.
+ *
+ * 4) Create four arrays of week visitor numbers
+ *    and a month array of the four weeks.
+ *    Test your function from 3) for different weeks and days.
+ *
+ */ -->
+<html lang="en">
+    <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Ch8</title>
+    </head>
+    <body>
+       <script>
+// Function to get visitor report for a specific day of the week
+var getVisitorReport = function (visitorArray, dayInWeek) {
+    var days = [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+    ];
+    var index = dayInWeek - 1;
+    var visitorReport;
+
+    visitorReport = "There were ";
+    visitorReport += visitorArray[index];
+    visitorReport += " visitors ";
+    visitorReport += "on " + days[index];
+
+    return visitorReport;
+};
+
+// Example array of visitors for each day of the week
+var visitors = [354, 132, 210, 221, 481, 300, 400];
+
+// Report for Friday (index 5)
+var report = getVisitorReport(visitors, 5);
+console.log(report); // Outputs: There were 481 visitors on Friday
+
+// Function to get visitor report for a specific day of the month
+var getMonthlyVisitorReport = function (monthArray, week, day) {
+    if (week >= 1 && week <= monthArray.length) {
+        var weekArray = monthArray[week - 1];
+        if (day >= 1 && day <= weekArray.length) {
+            return getVisitorReport(weekArray, day);
+        } else {
+            return "Invalid day number";
+        }
+    } else {
+        return "Invalid week number";
+    }
+};
+
+// Example arrays for four weeks
+var week1 = [354, 132, 210, 221, 481, 300, 400]; 
+var week2 = [400, 200, 150, 300, 500, 350, 600]; 
+var week3 = [300, 180, 220, 250, 400, 330, 550]; 
+var week4 = [320, 210, 190, 240, 470, 310, 500]; 
+
+// Array representing a month of visitor data
+var month = [week1, week2, week3, week4];
+
+// Test the function for various weeks and days
+console.log(getMonthlyVisitorReport(month, 1, 5)); 
+console.log(getMonthlyVisitorReport(month, 3, 7)); 
+console.log(getMonthlyVisitorReport(month, 2, 2)); 
+console.log(getMonthlyVisitorReport(month, 4, 3)); 
+
+</script>
+</body>
+</html>    
