@@ -1,0 +1,60 @@
+<!-- // Using the arguments passed by forEach
+
+var players;
+var showArguments;
+
+players = [ "Dax", "Jahver", "Kandra" ];
+
+showArguments = function (item, index, wholeArray) {
+  console.log("Item: " + item);
+  console.log("Index: " + index);
+  console.log("Array: " + wholeArray);
+};
+
+players.forEach(showArguments);
+
+
+/* Further Adventures
+ *
+ * 1) Add two more names to the players array.
+ *
+ * 2) Run the program.
+ *
+ * 3) Change the first console.log so
+ *    it uses wholeArray and index
+ *    to display the current item in
+ *    the array. Don't use the item
+ *    parameter.
+ *
+ */ -->
+<html lang="en">
+    <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Ch8</title>
+    </head>
+    <body>
+       <script>
+var players;
+var showArguments;
+
+players = [ "Dax", "Jahver", "Kandra" ];
+
+// 1) Add two more names to the players array.
+players.push("Alex");
+players.push("Morgan");
+
+// Function to show arguments passed by forEach
+showArguments = function (item, index, wholeArray) {
+  // 3) Change the first console.log to use wholeArray and index
+  console.log("Item: " + wholeArray[index]);
+  console.log("Index: " + index);
+  console.log("Array: " + wholeArray);
+};
+
+// 2) Run the program
+players.forEach(showArguments);
+
+</script>
+</body>
+</html>    
