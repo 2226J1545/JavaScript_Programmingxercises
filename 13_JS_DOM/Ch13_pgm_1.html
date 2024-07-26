@@ -1,0 +1,100 @@
+<!-- // Level 1
+
+// 1. Create an index.html file and put four p elements as above: Get the first paragraph by using document.querySelector(tagname) and tag name
+// 2. Get each of the the paragraph using document.querySelector('#id') and by their id
+// 3. Get all the p as nodeList using document.querySelectorAll(tagname) and by their tag name
+// 4. Loop through the nodeList and get the text content of each paragraph
+// 5. Set a text content to paragraph the fourth paragraph,Fourth Paragraph
+// 6. Set id and class attribute for all the paragraphs using different attribute setting methods
+
+// Level 2
+
+// 1. Change stye of each paragraph using JavaScript(eg. color, background, border, font-size, font-family)
+// 2. Select all paragraphs and loop through each elements and give the first and third paragraph a color of green, and the second and the fourth paragraph a red color
+// 3. Set text content, id and class to each paragraph -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paragraph Manipulation</title>
+    <style>
+        .styled-paragraph {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <p id="first">First Paragraph</p>
+    <p id="second">Second Paragraph</p>
+    <p id="third">Third Paragraph</p>
+    <p id="fourth">Fourth Paragraph</p>
+
+    <script>
+        // Level 1
+
+        // 1. Get the first paragraph by using document.querySelector(tagname) and tag name
+        const firstParagraph = document.querySelector('p');
+        console.log('First paragraph using tag name:', firstParagraph.textContent);
+
+        // 2. Get each of the paragraph using document.querySelector('#id') and by their id
+        const firstParaById = document.querySelector('#first');
+        const secondParaById = document.querySelector('#second');
+        const thirdParaById = document.querySelector('#third');
+        const fourthParaById = document.querySelector('#fourth');
+        console.log('First paragraph by ID:', firstParaById.textContent);
+        console.log('Second paragraph by ID:', secondParaById.textContent);
+        console.log('Third paragraph by ID:', thirdParaById.textContent);
+        console.log('Fourth paragraph by ID:', fourthParaById.textContent);
+
+        // 3. Get all the p as nodeList using document.querySelectorAll(tagname) and by their tag name
+        const allParagraphs = document.querySelectorAll('p');
+        console.log('All paragraphs:', allParagraphs);
+
+        // 4. Loop through the nodeList and get the text content of each paragraph
+        allParagraphs.forEach((para, index) => {
+            console.log(`Paragraph ${index + 1} text content:`, para.textContent);
+        });
+
+        // 5. Set a text content to paragraph the fourth paragraph, Fourth Paragraph
+        fourthParaById.textContent = 'Updated Fourth Paragraph';
+        console.log('Updated fourth paragraph text content:', fourthParaById.textContent);
+
+        // 6. Set id and class attribute for all the paragraphs using different attribute setting methods
+        allParagraphs.forEach((para, index) => {
+            para.setAttribute('id', `para${index + 1}`);
+            para.classList.add('styled-paragraph');
+        });
+
+        // Level 2
+
+        // 1. Change style of each paragraph using JavaScript
+        allParagraphs.forEach((para) => {
+            para.style.color = 'blue';
+            para.style.backgroundColor = '#f0f0f0';
+            para.style.border = '2px solid #000';
+            para.style.fontSize = '16px';
+            para.style.fontFamily = 'Arial, sans-serif';
+        });
+
+        // 2. Select all paragraphs and loop through each element and give the first and third paragraph a color of green, 
+        // and the second and the fourth paragraph a red color
+        allParagraphs.forEach((para, index) => {
+            if (index % 2 === 0) {
+                para.style.color = 'green'; // 0th and 2nd index
+            } else {
+                para.style.color = 'red'; // 1st and 3rd index
+            }
+        });
+
+        // 3. Set text content, id, and class to each paragraph
+        allParagraphs.forEach((para, index) => {
+            para.textContent = `Paragraph ${index + 1}`;
+            para.id = `updatedPara${index + 1}`;
+            para.className = `styled-paragraph paragraph-${index + 1}`;
+        });
+    </script>
+</body>
+</html>
