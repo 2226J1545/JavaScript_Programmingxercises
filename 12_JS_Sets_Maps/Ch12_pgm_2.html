@@ -1,0 +1,56 @@
+<!-- const a = [4, 5, 8, 9]
+const b = [3, 4, 5, 7]
+const countries = ['Finland', 'Sweden', 'Norway']
+
+
+// create an empty set
+// Create a set containing 0 to 10 using loop
+// Remove an element from a set
+// Clear a set
+// Create a set of 5 string elements from array
+// Create a map of countries and number of characters of a country -->
+<html lang="en">
+    <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Ch10</title>
+    </head>
+    <body>
+       <script> 
+const a = [4, 5, 8, 9];
+const b = [3, 4, 5, 7];
+const countries = ['Finland', 'Sweden', 'Norway'];
+
+// 1. Create an empty set
+const emptySet = new Set();
+console.log('Empty Set:', emptySet);
+
+// 2. Create a set containing 0 to 10 using a loop
+const set0To10 = new Set();
+for (let i = 0; i <= 10; i++) {
+    set0To10.add(i);
+}
+console.log('Set containing 0 to 10:', set0To10);
+
+// 3. Remove an element from a set
+set0To10.delete(5);
+console.log('Set after removing 5:', set0To10);
+
+// 4. Clear a set
+set0To10.clear();
+console.log('Set after clearing:', set0To10);
+
+// 5. Create a set of 5 string elements from array
+const array = ['apple', 'banana', 'cherry', 'date', 'elderberry'];
+const stringSet = new Set(array);
+console.log('Set from array:', stringSet);
+
+// 6. Create a map of countries and number of characters of a country
+const countryMap = new Map();
+countries.forEach(country => {
+    countryMap.set(country, country.length);
+});
+console.log('Map of countries and their number of characters:', countryMap);
+</script>
+</body>
+</html>  
