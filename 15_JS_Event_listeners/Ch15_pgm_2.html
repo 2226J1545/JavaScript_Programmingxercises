@@ -1,0 +1,83 @@
+<!-- // Generating the keyboard code code using even listener. 
+
+// The image below.
+
+// https://github.com/Asabeneh/30-Days-Of-JavaScript/raw/master/images/projects/dom_min_project_keycode_day_3.2.gif -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Code Display</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .key-display {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .key-info {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .key-details {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        .key-details span {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .key-details .key-code {
+            color: #007bff;
+        }
+        .key-details .key-value {
+            color: #28a745;
+        }
+        .key-details .key-location {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="key-display">
+        <div class="key-info">Key Pressed:</div>
+        <div class="key-details">
+            <span class="key-code">Key Code: <span id="key-code">Press any key</span></span>
+            <span class="key-value">Key Value: <span id="key-value">Press any key</span></span>
+            <span class="key-location">Key Location: <span id="key-location">Press any key</span></span>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('keydown', function(event) {
+            const keyCode = document.getElementById('key-code');
+            const keyValue = document.getElementById('key-value');
+            const keyLocation = document.getElementById('key-location');
+
+            keyCode.textContent = event.keyCode;
+            keyValue.textContent = event.key;
+            keyLocation.textContent = event.location;
+        });
+    </script>
+
+</body>
+</html>
+
