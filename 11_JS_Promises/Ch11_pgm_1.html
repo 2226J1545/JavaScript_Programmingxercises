@@ -1,0 +1,51 @@
+<!-- // Callbacks
+
+const doSomething = callback => {
+    setTimeout(() => {
+      const skills = ['HTML', 'CSS', 'JS']
+      callback('It did not go well', skills)
+    }, 2000)
+  }
+  
+  const callback = (err, result) => {
+    if (err) {
+      return console.log(err)
+    }
+    return console.log(result)
+  }
+  
+  doSomething(callback);
+
+
+// after 2 seconds it will print
+// It did not go well -->
+
+<html lang="en">
+    <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Ch11</title>
+    </head>
+    <body>
+       <script> 
+    const doSomething = callback => {
+        setTimeout(() => {
+          const skills = ['HTML', 'CSS', 'JS']
+          callback('It did not go well', skills)
+        }, 2000)
+      }
+      
+      const callback = (err, result) => {
+        if (err) {
+          return console.log(err)
+        }
+        return console.log(result)
+      }
+      
+      doSomething(callback)
+      
+      // After 2 seconds it will print:
+      // It did not go well
+    </script>
+</body>
+</html>  
