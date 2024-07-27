@@ -1,0 +1,63 @@
+<!-- const countriesAPI = 'https://restcountries.com/v2/all'
+const catsAPI = 'https://api.thecatapi.com/v1/breeds'
+
+// Read the cats api and find the average weight of cat in metric unit.
+// Read the countries api and find out the 10 largest countries
+// Read the countries api and count total number of languages in the world used as officials. -->
+<html lang="en">
+    <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Ch11</title>
+    </head>
+    <body>
+       <script> 
+const countriesAPI = 'https://restcountries.com/v2/all';
+const catsAPI = 'https://api.thecatapi.com/v1/breeds';
+
+async function fetchCatsData() {
+  try {
+    const response = await fetch(catsAPI);
+    const data = await response.json();
+    const totalWeight = data.reduce((acc, cat) => {
+      const weightRange = cat.weight.metric.split(' - ').map(Number);
+      const avgWeight = (weightRange[0] + weightRange[1]) / 2;
+      return acc + avgWeight;
+    }, 0);
+    const averageWeight = totalWeight / data.length;
+    console.log(`Average weight of cats in metric units: ${averageWeight.toFixed(2)} kg`);
+  } catch (error) {
+    console.error('Error fetching cats data:', error);
+  }
+}
+
+async function fetchCountriesData() {
+  try {
+    const response = await fetch(countriesAPI);
+    const data = await response.json();
+    
+    // Find the 10 largest countries by area
+    const largestCountries = data
+      .sort((a, b) => b.area - a.area)
+      .slice(0, 10)
+      .map(country => country.name);
+    console.log('10 largest countries by area:', largestCountries);
+    
+    // Count the total number of languages used as official languages
+    const languages = new Set();
+    data.forEach(country => {
+      country.languages.forEach(language => {
+        languages.add(language.name);
+      });
+    });
+    console.log(`Total number of languages used as official: ${languages.size}`);
+  } catch (error) {
+    console.error('Error fetching countries data:', error);
+  }
+}
+
+fetchCatsData();
+fetchCountriesData();
+</script>
+</body>
+</html>  
